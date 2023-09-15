@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Learning Vision-based Pursuit-Evasion Robot Policies.">
+        content="Conformal Decision Theory: Safe Autonomous Decisions Without Distributions">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Conformal Decision Theory</title>
@@ -104,8 +104,12 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
         <embed src="./static/images/teaser.png" class=center width=100%/>
-      <h2 class="subtitle has-text-centered">
-        BLA
+      <h2 class="subtitle has-text-justified">
+        Robot planner using a conformal controller on the <a href="https://cvgl.stanford.edu/projects/uav_data/">Stanford Drone Dataset</a>. Future trajectories of humans are predicted online by a machine learning algorithm (not visualized). The robot planner finds an optimal spline through the scene and is penalized for being close to humans. 
+        This penalty is proportional to a conformal control variable, \(\lambda_t\), which is adjusted online by the conformal controller so the average distance from a human is no more than 2 meters. 
+        The orange, pink, and blue curves are the robot trajectory with different planners: the <b>conformal controller</b>, an <b>aggressive</b> planner (i.e., no reward for avoiding humans), and a <b>conservative</b> planner (i.e., a large reward for avoiding humans). 
+        The darkness of the lines indicates the passage of time. 
+        Illustrative pedestrian trajectories are plotted as arrows; only the yellow pedestrians affect the spline planner.
       </h2>
     </div>
   </div>
