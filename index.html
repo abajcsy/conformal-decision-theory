@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Learning Vision-based Pursuit-Evasion Robot Policies.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conformal Decision Theory</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Conformal Decision Theory: <br> Safe Autonomous Decisions Without Distributions</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://jordylek.github.io/">Jordan Lekeufack</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~angelopoulos/">Anastasios N. Angelopoulos</a><sup>*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.cmu.edu/~abajcsy/">Andrea Bajcsy</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="http://people.eecs.berkeley.edu/~jordan/">Michael I. Jordan</a><sup>**</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://people.eecs.berkeley.edu/~malik/">Jitendra Malik</a><sup>**</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block"><sup>1</sup>University of Washington,</span> -->
+            <span class="author-block">University of California, Berkeley</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+<!--               <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <embed src="./static/images/teaser.png" class=center width=100%/>
+      <h2 class="subtitle has-text-centered">
+        BLA
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- Banner of Videos -->
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-hri_eucalyptus_1" class="carousel results-carousel">
+        <div class="item item-eucalyptus">
+          <video poster="" id="hri_eucalyptus_1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/hri_eucalyptus_3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-hri_2person_campanile">
+          <video poster="" id="hri_2person_campanile" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/hri_2person_campanile.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-robot_robot_field">
+          <video poster="" id="robot_robot_field" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/robot_robot_field.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-hri_campanile_1">
+          <video poster="" id="hri_campanile_1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/hri_drone_field_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce <i>Conformal Decision Theory</i>, a framework for producing safe decisions using control algorithms and machine learning models. 
+            Examples of decisions may include the modulation of a control variable, the choice of a policy at runtime, or the play of an action in a strategic game.
+            The decisions produced by our algorithms are safe in the sense that they come with provable statistical guarantees of having low risk without any assumptions on the world model whatsoever; the observations need not be I.I.D. and can even be adversarial.
+            The theory extends results from conformal prediction to calibrate decisions directly, without requiring the construction of prediction sets.
+            Experiments demonstrate the utility of our approach in process control, finance, and robot motion planning around humans.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+  <h2 class="title is-2">Stanford Drone Dataset Experiments</h2>
+    <div class="content has-text-justified">
+      <p>
+        Here we study the problem of robot navigation around people, which must balance safety (i.e., not colliding with humans) and efficiency (i.e., robot making progress towards goal). To ensure that the risk of collision is low while still making progress to the goal, the robot will constantly calibrate its reward function at run-time using a conformal controller.
+      </p>
+      <p>
+        The robot plans via model predictive control and at each timestep fits a maximum-reward spline subject to the robot's dynamics constraints, which is a non-linear Dubins car. Results are on the <TT>nexus_4</TT> scenario from Stanford Drone Dataset. The robot's goal is to cross the nexus while avoiding pedestrians. Safety was violated if the robot collided with a human. At all learning rates \(\eta\), the conformal controller is more efficient at navigation than ACI in terms of time. It remains safe so long as the learning rate is set high enough so that the robot planner can quickly adapt to nearby humans; when the learning rate is set too low, (near zero), proximity to humans is effectively not penalized, leading to collisions.
+      </p>
+    </div>
+    <div class="columns is-centered">
+      <!-- CC. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Conformal Controller</h2>
+          <p>
+            Calibrates the decision risk by adapting the conformal control variable:
+            
+            \(\lambda_{t+1} = \lambda_{t} + \eta \left( \epsilon - \ell_t \right)
+            \)
+          </p>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/cc_small.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Random. -->
+
+       <!-- ACI. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">ACI [<a href="https://arxiv.org/abs/2212.00278">1</a>]</h2>
+          <p>
+            First calibrates the prediction sets via adapting the \(\alpha_t\) using ACI, then plans with respect to these sets.
+          </p>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/aci_small.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ MARL. -->
+
+      <!-- Conservative. -->
+      <div class="column">
+        <h2 class="title is-4">Conservative</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+            Keeps a constant maximum value of the conformal control variable:
+             \(
+              \lambda_t = 1 \quad \forall t \in [T]
+              \)
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/conservative_small.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Game Theory. -->
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{lekeufack2024decision,
+  author    = {Lekeufack, Jordan, and Angelopoulos, Anastasios N, and Bajcsy, Andrea, and Jordan, Michael I., and Malik, Jitendra},
+  title     = {Conformal Decision Theory: Safe Autonomous Decisions Without Distributions},
+  journal   = {arXiv},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template from  <a
+              href="https://github.com/nerfies/nerfies.github.io">here</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
