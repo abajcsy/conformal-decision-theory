@@ -181,7 +181,7 @@
         Here we study the problem of robot navigation around people, which must balance safety (i.e., not colliding with humans) and efficiency (i.e., robot making progress towards goal). To ensure that the risk of collision is low while still making progress to the goal, the robot will constantly calibrate its reward function at run-time using a conformal controller.
       </p>
       <p>
-        The robot plans via model predictive control and at each timestep fits a maximum-reward spline subject to the robot's dynamics constraints, which is a non-linear Dubins car. Results are on the <TT>nexus_4</TT> scenario from Stanford Drone Dataset. The robot's goal is to cross the nexus while avoiding pedestrians. Safety was violated if the robot collided with a human. At all learning rates \(\eta\), the conformal controller is more efficient at navigation than ACI in terms of time. It remains safe so long as the learning rate is set high enough so that the robot planner can quickly adapt to nearby humans; when the learning rate is set too low, (near zero), proximity to humans is effectively not penalized, leading to collisions.
+        The robot plans via model predictive control and at each timestep fits a maximum-reward spline subject to the robot's dynamics constraints, which is a non-linear Dubins car. Results are on the <TT>nexus_4</TT> scenario from the <a href="https://cvgl.stanford.edu/projects/uav_data/">Stanford Drone Dataset</a>. The robot's goal is to cross the nexus while avoiding pedestrians. Safety was violated if the robot collided with a human. At all learning rates \(\eta\), the conformal controller is more efficient at navigation than ACI in terms of time. It remains safe so long as the learning rate is set high enough so that the robot planner can quickly adapt to nearby humans; when the learning rate is set too low, (near zero), proximity to humans is effectively not penalized, leading to collisions.
       </p>
     </div>
     <div class="columns is-centered">
@@ -238,10 +238,42 @@
         </div>
       </div>
     </div>
-    <!--/ Game Theory. -->
+
   </div>
 </section>
 
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <h2 class="title is-4">Quantitative Results</h2>
+        <embed src="./static/images/sdd_quantitative.png" class=center width=100%/>
+      <h2 class="subtitle has-text-justified">
+        <br>
+        Results on the <TT>nexus_4</TT> scenario from SDD. Robot's goal is to cross the nexus while avoiding pedestrians. Safety was violated if the robot collided with a human. At all learning rates \(\eta\), the conformal controller is more efficient at navigation than ACI in terms of time. It remains safe so long as the learning rate is set high enough so that the robot planner can quickly adapt to nearby humans; when the learning rate is set too low, (near zero), proximity to humans is effectively not penalized, leading to collisions.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-4">Qualitative Analysis</h2>
+      <embed src="./static/images/aci_v_cc.png" class=center width=100%/>
+      <h2 class="subtitle has-text-justified">
+        <br>
+        Visualization of interaction over time (left to right). (top) With our conformal controller (<b>CC</b>), the robot always makes progress towards its goal while remaining safe, even when blocked by crowds of people. (bottom) The <b>ACI</b> baseline calibrates the prediction sets. As soon as a mis-prediction happens, ACI expands the prediction sets to obtain coverage, but this frequently blocks the robot from moving anywhere (see \(t=10 s\)) even though the mis-predictions happened for a pedestrian very far away that wasn't interfering with the robot's plan.
+      </h2>
+      <br>
+      <embed src="./static/images/sdd_lineplot.png" class=center width=70%/>
+      <h2 class="subtitle has-text-justified">
+        <br>
+        <b>Parameter plot for visualization above.</b> (top) \(\lambda_t\) (calibrated by <b>CC</b>) and \(\alpha_t\) (used by <b>ACI</b> to calibrate prediction sets) over time. When \(\alpha_t \leq 0\), ACI returns infinite set and the robot stops. (Bottom) Distance to the nearest human over time. \(\lambda_t\) is large when the robot is close to a human, while \(\alpha_t\) is unrelated. \(\lambda_t\) trajectory is shorter because it reaches the goal faster.
+      </h2>
+    </div>
+  </div>
+</section>
 
 
 <section class="section" id="BibTeX">
