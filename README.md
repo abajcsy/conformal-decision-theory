@@ -1,4 +1,4 @@
-# Conformal Decision Theory: Safe Autonomous Decisions Without Distributions
+# Conformal Decision Theory: Safe Autonomous Decisions from Imperfect Predictions
 
 Please cite:
 ```
